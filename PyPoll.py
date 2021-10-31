@@ -60,11 +60,23 @@ with open(input_file) as election_data:
             # INSTANTIATE a candidate as a key for dictionary candidate_votes
             candidate_votes[candidate_name] = 0
         
-        # count a vote for candidate read    
+        # counting the number of votes for each candidate
         candidate_votes[candidate_name] += 1
         
-    # Getting Percentage of Votes: 
+    # Open output file for election's analysis
+    with open(output_file, "w") as election_report:
 
+        election_results = (
+        f"\nElection Results\n"
+        f"-------------------------\n"
+        f"Total Votes: {total_votes:,}\n"
+        f"-------------------------\n")
+        print(election_results, end="")
+   
+        # Save the final vote count to the text file.
+        election_report.write(election_results)
+ 
+    # Getting Votes and Percentage of Votes: 
     # get candidate names
     for each_candidate in candidate_votes: 
         # retrieve tallied vote for candidate
@@ -73,7 +85,8 @@ with open(input_file) as election_data:
         # get the percentage for this candidate's votes
         vote_percent = float(votes)/float(total_votes) * 100
 
-        print(f"{each_candidate}: {vote_percent:.1f}% ({votes:,})\n")
+        #Scenario6: Each candidate's name, percent and votes are correct
+        #print(f"{each_candidate}: {vote_percent:.1f}% ({votes:,})\n")
                 
         # Test Scenario4: Correct percentage of each candidate's vote
         # print(f"{each_candidate}: recieved {vote_percent:.1f}% of the vote.")
@@ -84,13 +97,14 @@ with open(input_file) as election_data:
             winning_percentage = vote_percent
             winning_candidate = each_candidate
 
+# Reporting Results: 
 winning_candidate_summary = (
     f"-------------------------\n"
     f"Winner: {winning_candidate}\n"
     f"Winning Vote Count: {winning_count:,}\n"
     f"Winning Percentage: {winning_percentage:.1f}%\n"
     f"-------------------------\n")
-print(winning_candidate_summary)
+#print(winning_candidate_summary)
             
 # Test Scenario5: The winner data
 #print(f"The winner is {winning_candidate}")        
@@ -114,8 +128,6 @@ print(winning_candidate_summary)
     # TODO: read and analyze the data here.
      
  
-    # Create output
-    with open(output_file, "w") as election_report:
     
         # Write list of three counties to the file.
         election_report.write("Counties in the Election\n-------------------------\nArapahoe\nDenver\nJefferson")
