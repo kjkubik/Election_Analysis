@@ -1,10 +1,3 @@
-# The following data is needed: 
-# •	Total number of votes cast
-# •	A complete list of candidates who received votes
-# •	Total number of votes each candidate received
-# •	Percentage of votes each candidate won
-# •	The winner of the election based on popular vote
-
 #       1. open the .csv file
 #       2. count all the records using a for loop (or accumulate total_votes_cast while you are looping through to get the total number of votes for each canditate)
 #       3. list all the candidates recieving votes (ever record has a candidate...so, we don't have to check if the candidate received a vote)
@@ -30,17 +23,56 @@ import os
 input_file = os.path.join("Resources", "election_results.csv")
 output_file=os.path.join("analysis", "election_analysis.txt")
 
+# count for input file records initialized
+total_votes = 0 
+# LIST of candidates: 
+candidate_options = []
+#Candidate's vote count DICTIONARY
+candidate_votes = {}
+
+
 # Open the election results and read the file
 with open(input_file) as election_data:
 
     # Read the file object with the reader function.
     file_reader = csv.reader(election_data)
 
-    # Read and print the header row.
+    # Read header record
     headers = next(file_reader)
-    print(headers)
+    
+    # main
+    for each_vote in file_reader:
+        # counting total records
+        total_votes += 1 
+        
+        # get the candidates name (used in accumulating votes)
+        candidate_name = each_vote[2]
 
+        if candidate_name not in candidate_options:
+            # add name to the candidate_options LIST
+            candidate_options.append(candidate_name)
+            # INSTANTIATE a candidate as a key for dictionary candidate_votes
+            candidate_votes[candidate_name] = 0
+        
+        # count a vote for candidate read    
+        candidate_votes[candidate_name] += 1
+        
+    
 
+         
+        
+# Test Scenario1: Correct record count. Is 369711?
+print(total_votes)
+
+# Test Scenario2: Correct candidates are in candidate_options: [Charles Casper Stockham, Diana DeGette and Raymon Anthony Doane]
+print(candidate_options)
+
+# Test Scenario3: Instantiated candidate name as key in candiatates_votes = {}
+print(candidate_votes)
+        
+            
+           
+'''
     # TODO: read and analyze the data here.
      
  
@@ -51,4 +83,4 @@ with open(input_file) as election_data:
         election_report.write("Counties in the Election\n-------------------------\nArapahoe\nDenver\nJefferson")
     
         election_report.close()
-    
+'''    
