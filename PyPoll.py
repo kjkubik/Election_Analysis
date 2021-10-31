@@ -81,14 +81,19 @@ with open(input_file) as election_data:
         # finding the winner of the election
         if votes > winning_count and vote_percent > winning_percentage:
             winning_count = votes
-            print(f"winning count is: {winning_count}")
             winning_percentage = vote_percent
-            print(f"winning % is: {winning_percentage}")
             winning_candidate = each_candidate
-            print(f"winning_candidate: {winning_candidate}")
-    
+
+winning_candidate_summary = (
+    f"-------------------------\n"
+    f"Winner: {winning_candidate}\n"
+    f"Winning Vote Count: {winning_count:,}\n"
+    f"Winning Percentage: {winning_percentage:.1f}%\n"
+    f"-------------------------\n")
+print(winning_candidate_summary)
+            
 # Test Scenario5: The winner data
-print(f"The winner is {winning_candidate}")        
+#print(f"The winner is {winning_candidate}")        
             
                 
 # Test Scenario1: Correct record count. Is 369711?
