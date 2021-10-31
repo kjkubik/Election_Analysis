@@ -25,6 +25,12 @@ output_file=os.path.join("analysis", "election_analysis.txt")
 
 # count for input file records initialized
 total_votes = 0 
+
+# Winner's Information
+winning_candidate = ""
+winning_count = 0
+winning_percentage = 0
+
 # LIST of candidates: 
 candidate_options = []
 #Candidate's vote count DICTIONARY
@@ -57,19 +63,46 @@ with open(input_file) as election_data:
         # count a vote for candidate read    
         candidate_votes[candidate_name] += 1
         
-    
+    # Getting Percentage of Votes: 
 
-         
+    # get candidate names
+    for each_candidate in candidate_votes: 
+        # retrieve tallied vote for candidate
+        votes = candidate_votes[each_candidate]
         
+        # get the percentage for this candidate's votes
+        vote_percent = float(votes)/float(total_votes) * 100
+
+        print(f"{each_candidate}: {vote_percent:.1f}% ({votes:,})\n")
+                
+        # Test Scenario4: Correct percentage of each candidate's vote
+        # print(f"{each_candidate}: recieved {vote_percent:.1f}% of the vote.")
+        
+        # finding the winner of the election
+        if votes > winning_count and vote_percent > winning_percentage:
+            winning_count = votes
+            print(f"winning count is: {winning_count}")
+            winning_percentage = vote_percent
+            print(f"winning % is: {winning_percentage}")
+            winning_candidate = each_candidate
+            print(f"winning_candidate: {winning_candidate}")
+    
+# Test Scenario5: The winner data
+print(f"The winner is {winning_candidate}")        
+            
+                
 # Test Scenario1: Correct record count. Is 369711?
-print(total_votes)
+#print(total_votes)
 
 # Test Scenario2: Correct candidates are in candidate_options: [Charles Casper Stockham, Diana DeGette and Raymon Anthony Doane]
-print(candidate_options)
+#print(candidate_options)
 
 # Test Scenario3: Instantiated candidate name as key in candiatates_votes = {}
-print(candidate_votes)
-        
+#print(candidate_votes)
+
+
+            
+            
             
            
 '''
