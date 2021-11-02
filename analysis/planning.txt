@@ -16,3 +16,14 @@
 #       
 #       6. an if statement asking if the previous canditate's vote_tally is higher then the lasts within a for-loop
 
+# Challenge Requirements: 
+•	The voter turnout for each county
+•	The percentage of votes from each county out of the total count
+•	The county with the highest turnout
+
+#7. To get the turnout for each country we need to accumulate the totals for each county. We are already accumulating total votes. 
+#   So, right around where we are tallying grand total of votes, we could ask "hey what county is this vote in?" Whatever the answer is tally to that county.
+#8. After we have all the the votes by county and the grand total of votes, we calculate each counties % while looping though the county votes LIST/Dictionary
+#9. While we are getting the percentages, we also ask "is this the highest turn out?" (that is, initialize highest-turnout to 0, and write an if statement 
+asking if the county's turn out is larger than highest turnout. If it is, we move that turnout into highest turnout.
+
