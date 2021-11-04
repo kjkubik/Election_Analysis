@@ -25,10 +25,11 @@ The resulting report does address several asspects of the campain.
 
 ![](Resources/HighlightingResults.png)
 
+- Number of votes cast in this congressional election
+- Breakdown of:
+  - Votes for each county
+  - Percentage of total votes for each county
 
-* How many votes were cast in this congressional election?
-
-* A breakdown of the number of votes and the percentage of total votes for each county in the precinct.
 * Which county had the largest turnout
 * A breakdown of the number of votes and the percentage of the total votes each candidate received.
 * The winner of the election, their vote count, and their percentage of the total votes
