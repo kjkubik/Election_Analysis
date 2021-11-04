@@ -4,7 +4,7 @@ import os
 # input file(s):
 file_to_load = os.path.join("Resources", "election_results.csv")
 # output file(s):
-file_to_save = os.path.join("analysis", "election_data.txt")
+file_to_save = os.path.join("analysis", "election_results.txt")
 
 # capture candidate data 
 candidate_names = []
@@ -109,12 +109,11 @@ with open(file_to_save, "w") as txt_file:
         county_vote_percentage = float(county_vote_count)/float(total_votes) * 100 
 
          # county's results 
-        county_results = f"{county_name}: " \
-            f"{county_vote_percentage:.1f}% " \
-            f"({county_vote_count:,})"
+        county_results_terminal = (f"{county_name}: {county_vote_percentage:.1f}% ({county_vote_count:,})")
+        county_results_file =     (f"{county_name}: {county_vote_percentage:.1f}% ({county_vote_count:,})\n")
             
-        print(county_results)
-        txt_file.write(county_results)
+        print(county_results_terminal)
+        txt_file.write(county_results_file)
             
         # determine winning county's namme (TODO: we could give the county's vote and percent)
         if (county_vote_count > largest_county_count) and (county_vote_percentage > largest_county_percentage):
@@ -142,9 +141,7 @@ with open(file_to_save, "w") as txt_file:
         vote_percentage = float(votes) / float(total_votes) * 100
         
         # canditate's results
-        candidate_results = f"{candidate_name}: " \
-                            f"{vote_percentage:.1f}% " \
-                            f"({votes:,})\n"
+        candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
 
         print(candidate_results)
         txt_file.write(candidate_results)
