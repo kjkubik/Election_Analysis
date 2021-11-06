@@ -45,21 +45,24 @@ The following can be found in the generated report.
 
 ## Election-Audit Summary
 
-This reporting provided give some valuable information about
-who is voting and where they are voting. Here are some examples:
+This report provided some good election information. It gives
+us information about votes cast. We can also see that Denver
+county had cast over four-fifths of the votes. It clearly
+shows the Diana DeGette is the winner of the election.
 
-- The only consistent popular vote was Doane's.
-- The largest popularity vote difference was in Denver county.
-- DeGette and Stockham are the top runners.
-- The voting gap's range was roughly between 4% and 60%
-- The smallest popularity vote difference was in Jefferson county, where Stockham won the popularity vote (not by much though).
-- The winner won in the county with the most votes.
-
-From the data received, there is other information that could be
-captured for this report. We could capture each candidate's:
-
-1) Vote breakdown by county
-2) percentage of votes per county
+I believe even more value informatation could be captured in
+this report. The spreadsheet created below shows all items that
+could possibly be. 
 
 ![](Resources/Proposal.png)
 
+By adding these elements we can easily see:
+
+- Doane has a consistant vote percentage of around 3%.
+- The largest popularity vote difference was in Denver county.
+- DeGette and Stockham are the top runners.
+- In Jefferson county, Stockham did win, but not by much.
+
+We not only have the grand totals for each candiate but we have
+the break down of votes and percentages by county. This may prove
+to be more valuable than the grand totals.
