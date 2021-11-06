@@ -2,14 +2,17 @@
 
 ## Overview of Election Audit:
 
-This audit was created to report election information to the Colorado Board of Elections. They requested to know each candidate’s popular vote results. These results included:
+This audit was created to report election information
+to the Colorado Board of Elections. They requested to know
+each candidate’s popular vote results. These results included:
+
 
 - Total number of votes cast
-- County’s name
+- Each countys' name
 - Number of votes from each county
 - Percentage of votes from each county
 - Overall county voter turnout
-- Candidate’s Name
+- Each candidates' name
 - Number of votes each candidate received
 - Percentage of votes each candidate received
 - The winner of the election stats
@@ -21,8 +24,15 @@ This audit was created to report election information to the Colorado Board of E
 
 ## Election-Audit Results:
 
-The resulting report does address several asspects of the campain.
-The following can be found in the generated report.
+The resulting report does address several aspects of the campain.
+The following can be found in the report below.
+
+### Report Highlights
+
+![](Resources/HighlightingResults.png)
+
+
+### Reported Items:
 
 - Total number of votes cast for the election
 - County Breakdown:
@@ -39,10 +49,6 @@ The following can be found in the generated report.
   - Their vote count
   - The percentage of votes won
 
-### Report Highlights
-
-![](Resources/HighlightingResults.png)
-
 ## Election-Audit Summary
 
 This report provided some good election information. It gives
@@ -52,7 +58,7 @@ shows the Diana DeGette is the winner of the election.
 
 I believe even more value informatation could be captured in
 this report. The spreadsheet created below shows all items that
-could possibly be. 
+could possibly be added. 
 
 ![](Resources/Proposal.png)
 
@@ -66,3 +72,4 @@ By adding these elements we can easily see:
 We not only have the grand totals for each candiate but we have
 the break down of votes and percentages by county. This may prove
 to be more valuable than the grand totals.
+
